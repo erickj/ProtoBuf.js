@@ -15,6 +15,8 @@
  */
 goog.provide('dcodeIO.ProtoBuf');
 
+goog.require('dcodeIO.ByteBuffer');
+
 
 /**
  * @license ProtoBuf.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
@@ -2734,16 +2736,10 @@ goog.provide('dcodeIO.ProtoBuf');
         return ProtoBuf;
     }
 
-    // Enable module loading if available
-    if (typeof module != 'undefined' && module["exports"]) { // CommonJS
-        module["exports"] = loadProtoBuf(require("bytebuffer"));
-    } else if (typeof define != 'undefined' && define["amd"]) { // AMD
-        define("ProtoBuf", ["ByteBuffer"], loadProtoBuf);
-    } else { // Shim
-        if (!global["dcodeIO"]) {
-            global["dcodeIO"] = {};
-        }
-        global["dcodeIO"]["ProtoBuf"] = loadProtoBuf(global["dcodeIO"]["ByteBuffer"]);
+    // export to avoid closure code removal
+    if (!global["dcodeIO"]) {
+      global["dcodeIO"] = {};
     }
+    global["dcodeIO"]["ProtoBuf"] = loadProtoBuf(global["dcodeIO"]["ByteBuffer"]);
 
 })(this);

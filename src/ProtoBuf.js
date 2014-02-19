@@ -15,6 +15,8 @@
  */
 // #ifdef GOOG
 goog.provide('dcodeIO.ProtoBuf');
+
+goog.require('dcodeIO.ByteBuffer');
 // #endif
 
 
@@ -359,6 +361,7 @@ goog.provide('dcodeIO.ProtoBuf');
         return ProtoBuf;
     }
 
+    // #ifndef GOOG
     // Enable module loading if available
     if (typeof module != 'undefined' && module["exports"]) { // CommonJS
         module["exports"] = loadProtoBuf(require("bytebuffer"));
@@ -370,5 +373,12 @@ goog.provide('dcodeIO.ProtoBuf');
         }
         global["dcodeIO"]["ProtoBuf"] = loadProtoBuf(global["dcodeIO"]["ByteBuffer"]);
     }
+    // #else
+    // export to avoid closure code removal
+    if (!global["dcodeIO"]) {
+      global["dcodeIO"] = {};
+    }
+    global["dcodeIO"]["ProtoBuf"] = loadProtoBuf(global["dcodeIO"]["ByteBuffer"]);
+    // #endif
 
 })(this);
