@@ -40,7 +40,7 @@
         "compile": "npm run-script compile-full && npm run-script compile-noparse && npm run-script compile-goog",
         "compile-full": "ccjs ProtoBuf.js --create_source_map=ProtoBuf.min.map --compilation_level=SIMPLE_OPTIMIZATIONS > ProtoBuf.min.js",
         "compile-noparse": "ccjs ProtoBuf.noparse.js --create_source_map=ProtoBuf.noparse.min.map --compilation_level=SIMPLE_OPTIMIZATIONS > ProtoBuf.noparse.min.js",
-        "compile-goog": "ccjs ProtoBuf.goog.js --create_source_map=ProtoBuf.goog.min.map --compilation_level=ADVANCED_OPTIMIZATIONS > ProtoBuf.goog.min.js",
+        "compile-goog": "ccjs ProtoBuf.goog.js --create_source_map=ProtoBuf.goog.min.map --compilation_level=ADVANCED_OPTIMIZATIONS --flagfile=.closureflags --extra_annotation_name=exports --extra_annotation_name=alias --extra_annotation_name=abstract --manage_closure_dependencies > ProtoBuf.goog.min.js",
         "jsdoc": "jsdoc -c jsdoc.json"
     }
 }
