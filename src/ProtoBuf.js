@@ -13,6 +13,10 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
+// #ifdef GOOG
+goog.provide('dcodeIO.ProtoBuf');
+// #endif
+
 
 /**
  * @license ProtoBuf.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
@@ -21,7 +25,7 @@
  */
 (function(global) {
     "use strict";
-    
+
     function loadProtoBuf(ByteBuffer) {
 
         /**
@@ -31,7 +35,7 @@
          * @expose
          */
         var ProtoBuf = {};
-        
+
         /**
          * ProtoBuf.js version.
          * @type {string}
@@ -188,24 +192,24 @@
          * @expose
          */
         ProtoBuf.convertFieldsToCamelCase = false;
-        
+
         // #include "ProtoBuf/Util.js"
-        
+
         // #include "ProtoBuf/Lang.js"
-        
+
         // #ifndef NOPARSE
         // #include "ProtoBuf/DotProto.js"
-        
+
         // #else
         // This build of ProtoBuf.js does not include DotProto support.
-        
+
         // #endif
         // #include "ProtoBuf/Reflect.js"
-        
+
         // #include "ProtoBuf/Builder.js"
 
         // #ifndef NOPARSE
-        
+
         /**
          * Loads a .proto string and returns the Builder.
          * @param {string} proto .proto file contents

@@ -41,6 +41,15 @@ source = new Preprocessor(fs.readFileSync(__dirname+"/src/ProtoBuf.js"), __dirna
 console.log("Writing ProtoBuf.noparse.js: "+source.length+" bytes");
 fs.writeFileSync(__dirname+"/ProtoBuf.noparse.js", source);
 
+// goog.provide build
+source = new Preprocessor(fs.readFileSync(__dirname+"/src/ProtoBuf.js"), __dirname+"/src").process({
+    "GOOG": true,
+    "NOPARSE": true,
+    "VERSION": pkg.version
+});
+console.log("Writing ProtoBuf.goog.js: "+source.length+" bytes");
+fs.writeFileSync(__dirname+"/ProtoBuf.goog.js", source);
+
 // Bower versioning
 source = new Preprocessor(fs.readFileSync(__dirname+"/src/bower.json"), __dirname+"/src").process({
     "VERSION": pkg.version
