@@ -14,9 +14,9 @@
  limitations under the License.
  */
 // #ifdef GOOG
-goog.provide('dcodeIO.ProtoBuf');
+goog.provide('ProtoBuf');
 
-goog.require('dcodeIO.ByteBuffer');
+goog.require('ByteBuffer');
 // #endif
 
 
@@ -376,7 +376,7 @@ goog.require('dcodeIO.ByteBuffer');
     // #else
     // export to avoid closure code removal
     if (!global["dcodeIO"]) {
-      global["dcodeIO"] = {};
+        global["dcodeIO"] = {};
     }
     global["dcodeIO"]["ProtoBuf"] = loadProtoBuf(global["dcodeIO"]["ByteBuffer"]);
     // #endif

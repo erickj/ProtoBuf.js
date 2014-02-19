@@ -13,9 +13,9 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-goog.provide('dcodeIO.ProtoBuf');
+goog.provide('ProtoBuf');
 
-goog.require('dcodeIO.ByteBuffer');
+goog.require('ByteBuffer');
 
 
 /**
@@ -2738,7 +2738,7 @@ goog.require('dcodeIO.ByteBuffer');
 
     // export to avoid closure code removal
     if (!global["dcodeIO"]) {
-      global["dcodeIO"] = {};
+        global["dcodeIO"] = {};
     }
     global["dcodeIO"]["ProtoBuf"] = loadProtoBuf(global["dcodeIO"]["ByteBuffer"]);
 
