@@ -14,6 +14,7 @@
  limitations under the License.
  */
 
+
 /**
  * @license ProtoBuf.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
  * Released under the Apache License, Version 2.0
@@ -21,7 +22,7 @@
  */
 (function(global) {
     "use strict";
-    
+
     function loadProtoBuf(ByteBuffer) {
 
         /**
@@ -31,7 +32,7 @@
          * @expose
          */
         var ProtoBuf = {};
-        
+
         /**
          * ProtoBuf.js version.
          * @type {string}
@@ -188,7 +189,7 @@
          * @expose
          */
         ProtoBuf.convertFieldsToCamelCase = false;
-        
+
         /**
          * @alias ProtoBuf.Util
          * @expose
@@ -316,7 +317,7 @@
             };
             
             return Util;
-        })();        
+        })();
         /**
          * @alias ProtoBuf.Lang
          * @expose
@@ -370,9 +371,9 @@
             };
             return Lang;
         })();
-                
-        // This build of ProtoBuf.js does not include DotProto support.
         
+        // This build of ProtoBuf.js does not include DotProto support.
+
         /**
          * @alias ProtoBuf.Reflect
          * @expose
@@ -2029,7 +2030,7 @@
             
             return Reflect;
         })(ProtoBuf);
-                
+        
         /**
          * @alias ProtoBuf.Builder
          * @expose
